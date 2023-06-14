@@ -34,6 +34,17 @@ const TodoList = () => {
     }
   };
 
+  const deleteTodo = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:8000/api/todos/${id}`, {
+        method: "DELETE",
+      });
+      setTodos(todos.filter((todo) => todo.todo_id !== id));
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
+
   useEffect(() => {
     getTodos();
   }, []);
@@ -50,7 +61,11 @@ const TodoList = () => {
           />
           <button>Add Todo</button>
         </form>
-        {loading ? <h2>Loading</h2> : <ListTodos todos={todos} />}
+        {loading ? (
+          <h2>Loading</h2>
+        ) : (
+          <ListTodos todos={todos} deleteTodo={deleteTodo} />
+        )}
       </div>
     </div>
   );
