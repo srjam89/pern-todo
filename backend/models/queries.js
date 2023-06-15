@@ -34,8 +34,8 @@ const addTodo = (req, res) => {
 };
 
 const updateTodo = (req, res) => {
-  const id = parseInt(req.params.id);
   const { description } = req.body;
+  const { id } = req.params;
   db.query(
     "UPDATE todo SET description = $1 WHERE todo_id = $2 RETURNING *",
     [description, id],
