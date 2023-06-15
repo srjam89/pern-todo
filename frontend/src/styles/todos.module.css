@@ -68,3 +68,26 @@ input[type="text"] {
     background: linear-gradient(90deg,#ac2bbd, #86a7df, #75b5c3);
     cursor: pointer;
   }
+
+
+  @media only screen and (max-width: 600px) {
+    .todoContainer {
+      width: 85%;
+    }
+    button {
+      font-size: 12px;
+      padding: 4px;
+    }
+    ul {
+      width: 320px;
+    }
+  }
+
+  @media only screen and (max-width: 914px) {
+    .todoContainer {
+      width: 85%;
+    }
+    ul {
+      width: 450px;
+    }
+  }

@@ -4,7 +4,6 @@ import todoItemCSS from "../styles/todoItemCSS.module.css";
 const TodoItem = ({ todos, deleteTodo }) => {
   const [edit, setEdit] = useState(false);
   const [description, setDescription] = useState(todos.description);
-  console.log(todos.description);
   const descriptionTodo = todos.description;
 
   const submitNewTodo = async (e) => {
@@ -20,9 +19,7 @@ const TodoItem = ({ todos, deleteTodo }) => {
         }
       );
       window.location = "/";
-    } catch (err) {
-      console.log(err.message);
-    }
+    } catch (err) {}
   };
 
   const clickEdit = () => {
@@ -47,7 +44,7 @@ const TodoItem = ({ todos, deleteTodo }) => {
 
   const editTemplate = (
     <div>
-      <form style={{ marginTop: "30px" }}>
+      <form style={{ marginTop: "20px" }}>
         <input
           onChange={(e) => setDescription(e.target.value)}
           value={description}
@@ -55,7 +52,11 @@ const TodoItem = ({ todos, deleteTodo }) => {
           id={todos.todo_id}
           autoComplete="off"
         />
-        <button onClick={() => setEdit(false)} type="button">
+        <button
+          className={todoItemCSS.cancelBtn}
+          onClick={() => setEdit(false)}
+          type="button"
+        >
           Cancel
         </button>
         <button onClick={(e) => submitNewTodo(e)}>Save</button>
