@@ -18,13 +18,14 @@
 }
 
 input[type="text"] {
-  width: 250px;
-  margin-right: 5px;
+  width: 300px;
+  margin-right: 20px;
 }
 
 .cancelBtn {
-  margin-right: 5px;
+  margin-right: 70px;
 }
+
 
 @media only screen and (max-width: 600px) {
   input[type="text"] {

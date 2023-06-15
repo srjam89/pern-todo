@@ -69,6 +69,25 @@ input[type="text"] {
     cursor: pointer;
   }
 
+  ul {
+    width: 75%;
+  }
+
+  @media only screen and (max-width: 914px) {
+    .todoContainer {
+      width: 85%;
+    }
+    ul {
+      width: 450px;
+    }
+  }
+
+  @media only screen and (max-width: 390px) {
+    ul {
+      width: 300px;
+    }
+  }
+
 
   @media only screen and (max-width: 600px) {
     .todoContainer {
@@ -80,14 +99,5 @@ input[type="text"] {
     }
     ul {
       width: 320px;
-    }
-  }
-
-  @media only screen and (max-width: 914px) {
-    .todoContainer {
-      width: 85%;
-    }
-    ul {
-      width: 450px;
     }
   }
